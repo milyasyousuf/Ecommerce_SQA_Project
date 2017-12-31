@@ -175,11 +175,17 @@ include 'config.php';
             <div class="small-8 columns">
               <input type="submit" id="right-label" value="Update" style="background: #0078A0; border: none; color: #fff; font-family: 'Helvetica Neue', sans-serif; font-size: 1em; padding: 10px;">
               <input type="reset" id="right-label" value="Reset" style="background: #0078A0; border: none; color: #fff; font-family: 'Helvetica Neue', sans-serif; font-size: 1em; padding: 10px;">
+             
+
             </div>
           </div>
         </div>
       </div>
     </form>
+     <form method="POST" action="delete_user_account.php">
+              <input type="submit" id="right-label" value="Delete Account" style="background: #0078A0; border: none; color: #fff; font-family: 'Helvetica Neue', sans-serif; font-size: 1em; padding: 10px;margin-left:450px;margin-top:-130px;position: relative;">
+
+            </form>
 
 
 
