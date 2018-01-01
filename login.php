@@ -75,9 +75,6 @@ if(isset($_SESSION["username"])){
             <div class="small-8 columns">
               <input type="password" id="right-label" name="pwd" data-validation="required">
             </div>
-            <div class="small-8 columns">
-              <p id="demo"></p>
-            </div>
           </div>
 
           <div class="row">

@@ -106,7 +106,7 @@ if (isset($_SESSION["username"])) {header ("location:index.php");}
               <label for="right-label" class="right inline">E-Mail</label>
             </div>
             <div class="small-8 columns">
-              <input type="email" id="right-label" placeholder="nayantronix@gmail.com" name="email" data-validation="required" data-validation="email">
+              <input type="email" id="right-label" placeholder="nayantronix@gmail.com" name="email" data-validation="required email" >
             </div>
           </div>
           <div class="row">
@@ -114,7 +114,7 @@ if (isset($_SESSION["username"])) {header ("location:index.php");}
               <label for="right-label" class="right inline">Password</label>
             </div>
             <div class="small-8 columns">
-              <input type="password" id="right-label" name="pwd" data-validation="required length" data-validation-length="min5">
+              <input type="password" id="right-label" name="pwd" data-validation="required length" data-validation-length="6-15">
             </div>
           </div>
           <div class="row">
