@@ -97,8 +97,8 @@ if (isset($_SESSION["username"])) {header ("location:index.php");}
               <label for="right-label" class="right inline">Pin Code</label>
             </div>
             <div class="small-8 columns">
-              <input type="number" id="right-label" placeholder="75500" name="pin" 
-              data-validation="number">
+              <input type="text" id="right-label" placeholder="75500" name="pin" 
+              data-validation="number length" data-validation-length="5-9">
             </div>
           </div>
           <div class="row">
