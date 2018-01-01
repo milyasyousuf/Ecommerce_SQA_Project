@@ -56,7 +56,7 @@ if(isset($_SESSION["username"])){
 
 
 
-    <form name="myForm" method="POST" action="verify.php" onsubmit="return validateForm()" style="margin-top:30px;">
+    <form method="POST" action="verify.php" style="margin-top:30px;">
       <div class="row">
         <div class="small-8">
 
@@ -65,7 +65,7 @@ if(isset($_SESSION["username"])){
               <label for="right-label" class="right inline">Email</label>
             </div>
             <div class="small-8 columns">
-              <input type="email" id="right-label" placeholder="abc@xyz.com" name="username">
+              <input type="email" id="right-label" placeholder="abc@xyz.com" name="username" data-validation="required email">
             </div>
           </div>
           <div class="row">
@@ -73,7 +73,7 @@ if(isset($_SESSION["username"])){
               <label for="right-label" class="right inline">Password</label>
             </div>
             <div class="small-8 columns">
-              <input type="password" id="right-label" name="pwd">
+              <input type="password" id="right-label" name="pwd" data-validation="required">
             </div>
             <div class="small-8 columns">
               <p id="demo"></p>
@@ -109,29 +109,11 @@ if(isset($_SESSION["username"])){
 
     <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
-    <script type="text/javascript">
-
-      function validateForm() {
-          var username = document.forms["myForm"]["username"].value;
-          var pwd = document.forms["myForm"]["pwd"].value;
-          if (username == "" || pwd == "") {
-            if(username == "" && pwd == ""){
-              text = "Form must be filled!";
-            } else if(pwd == ""){
-              text = "password is required!";
-            } else if(username == ""){
-              text = "email is required!";
-            }
-
-            document.getElementById("demo").innerHTML = text;
-            setTimeout(function() {
-              document.getElementById("demo").innerHTML = "";
-            }, 2000);
-            
-            return false;
-          }
-      }
-
+    <script src="js/vendor/jquery_form_validator.js"></script>
+    <script>
+      $.validate({
+        lang: 'es'
+      });
     </script>
     <script>
       $(document).foundation();

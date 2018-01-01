@@ -63,7 +63,7 @@ if (isset($_SESSION["username"])) {header ("location:index.php");}
               <label for="right-label" class="right inline">First Name</label>
             </div>
             <div class="small-8 columns">
-              <input type="text" id="right-label" placeholder="Nayan" name="fname">
+              <input type="text" id="right-label" placeholder="Nayan" name="fname"  data-validation="required custom" data-validation-regexp="^([A-z]+)$">
             </div>
           </div>
           <div class="row">
@@ -71,15 +71,16 @@ if (isset($_SESSION["username"])) {header ("location:index.php");}
               <label for="right-label" class="right inline">Last Name</label>
             </div>
             <div class="small-8 columns">
-              <input type="text" id="right-label" placeholder="Seth" name="lname">
+              <input type="text" id="right-label" placeholder="Seth" name="lname"  data-validation="required custom" data-validation-regexp="^([A-z]+)$">
             </div>
           </div>
           <div class="row">
             <div class="small-4 columns">
-              <label for="right-label" class="right inline">Address</label>
+              <label for="right-label" class="right inline">Address</label
+              data-validation="alphanumeric" data-validation-allowing="-_/">
             </div>
             <div class="small-8 columns">
-              <input type="text" id="right-label" placeholder="Infinite Loop" name="address">
+              <input type="text" id="right-label" placeholder="Infinite Loop" name="address" >
             </div>
           </div>
           <div class="row">
@@ -87,7 +88,8 @@ if (isset($_SESSION["username"])) {header ("location:index.php");}
               <label for="right-label" class="right inline">City</label>
             </div>
             <div class="small-8 columns">
-              <input type="text" id="right-label" placeholder="Mumbai" name="city">
+              <input type="text" id="right-label" placeholder="Karachi" name="city" 
+              data-validation="custom" data-validation-regexp="^([A-z]+)$">
             </div>
           </div>
           <div class="row">
@@ -95,7 +97,8 @@ if (isset($_SESSION["username"])) {header ("location:index.php");}
               <label for="right-label" class="right inline">Pin Code</label>
             </div>
             <div class="small-8 columns">
-              <input type="number" id="right-label" placeholder="400056" name="pin">
+              <input type="number" id="right-label" placeholder="75500" name="pin" 
+              data-validation="number">
             </div>
           </div>
           <div class="row">
@@ -103,7 +106,7 @@ if (isset($_SESSION["username"])) {header ("location:index.php");}
               <label for="right-label" class="right inline">E-Mail</label>
             </div>
             <div class="small-8 columns">
-              <input type="email" id="right-label" placeholder="nayantronix@gmail.com" name="email">
+              <input type="email" id="right-label" placeholder="nayantronix@gmail.com" name="email" data-validation="required" data-validation="email">
             </div>
           </div>
           <div class="row">
@@ -111,7 +114,7 @@ if (isset($_SESSION["username"])) {header ("location:index.php");}
               <label for="right-label" class="right inline">Password</label>
             </div>
             <div class="small-8 columns">
-              <input type="password" id="right-label" name="pwd">
+              <input type="password" id="right-label" name="pwd" data-validation="required length" data-validation-length="min5">
             </div>
           </div>
           <div class="row">
@@ -142,6 +145,12 @@ if (isset($_SESSION["username"])) {header ("location:index.php");}
 
 
     <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/jquery_form_validator.js"></script>
+    <script>
+      $.validate({
+        lang: 'es'
+      });
+    </script>
     <script src="js/foundation.min.js"></script>
     <script>
       $(document).foundation();
