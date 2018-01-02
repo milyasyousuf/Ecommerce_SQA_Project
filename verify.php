@@ -5,7 +5,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
 
 include 'config.php';
 
-$username = $_POST["username"];
+$username = strtolower($_POST["username"]);
 $password = $_POST["pwd"];
 $flag = 'true';
 //$query = $mysqli->query("SELECT email, password from users");
@@ -37,7 +37,7 @@ if($result){
 
 function redirect() {
   echo '<h1>Invalid Login! Redirecting...</h1>';
-  header("Refresh: 3; url=index.php");
+  header("Refresh: 3; url=login.php");
 }
 
 

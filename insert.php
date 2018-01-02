@@ -7,7 +7,7 @@ $lname = $_POST["lname"];
 $address = $_POST["address"];
 $city = $_POST["city"];
 $pin = $_POST["pin"];
-$email = $_POST["email"];
+$email = strtolower($_POST["email"]);
 $pwd = $_POST["pwd"];
 
 	$sql="select * from users where (email='$email');";
